@@ -18,7 +18,8 @@ const FB = require('./facebook.js');
 const wit = bot.getWit();
 
 // Webserver parameter
-const PORT = process.env.PORT || 8445;
+const PORT = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8445;
+const ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 // Wit.ai bot specific code
 
@@ -52,7 +53,7 @@ const findOrCreateSession = (fbid) => {
 // Starting our webserver and putting it all together
 const app = express();
 app.set('port', PORT);
-app.listen(app.get('port'));
+app.listen(app.get('port'), ip);
 app.use(bodyParser.json());
 console.log("I'm wating for you @" + PORT);
 
