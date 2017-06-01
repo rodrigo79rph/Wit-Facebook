@@ -169,6 +169,7 @@ The USER_ID error is OK, but make sure the bot says, "I see it’s sunny in Hong
 
 ## Credit
 I reused soruce code and configuration from:
+* https://github.com/hunkim
 * https://github.com/wit-ai/node-wit
 * https://github.com/jw84/messenger-bot-tutorial
 * https://developers.facebook.com/docs/messenger-platform/quickstart
